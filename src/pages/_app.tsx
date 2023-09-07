@@ -50,9 +50,6 @@ export default function App({ Component, pageProps }: AppProps) {
          <ChakraProvider theme={appTheme}>
             <CredentialsProvider.Provider value={[user, setUser]}>
                <DarkTheme />
-               {!loggedInUser ? (
-                  <Login />
-               ) : (
                   <Flex
                      display={'flex'}
                      height={'100%'}
@@ -62,7 +59,6 @@ export default function App({ Component, pageProps }: AppProps) {
                      <SideBar useMobStyle={isUnder1100} />
                      <Component {...pageProps} />
                   </Flex>
-               )}
             </CredentialsProvider.Provider>
          </ChakraProvider>
       </>
